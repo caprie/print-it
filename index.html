@@ -3,26 +3,38 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Print it ! - Impressions d'entreprise</title>
+	<title>Print it! - Impressions d'entreprises</title> <!-- correction orthographe-->
 	<link rel="stylesheet" href="./assets/style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@400;900&display=swap" rel="stylesheet">
 </head>
 <body>
+
+	<!-- header -->
 <header class="container">
 	<h1>
-		<img class="logo" src="./assets/images/logo.png" alt="Print it ! Impressions d'entreprises" >
+		<img class="logo" src="./assets/images/logo.png" alt="Print it! Impressions d'entreprises" > <!-- correction orthographe-->
 	</h1>
+		<!-- btn devis -->
 	<a class="btn devis" href="mailto:contact@print-it.tld">Devis</a>
 </header>
+
+
 <main>
+
+	<!-- banner -->
 	<div id="banner">
 		<img class="banner-img" src="./assets/images/slideshow/slide1.jpg" alt="Banner Print-it">
+		<a href="#" class="arrow arrow_left" alt="Flêche vers la gauche"></a> <!-- placement des fleches pour futur lien cliquable-->
+		<a href="#" class="arrow arrow_right" alt="Flêche vers la droite"></a>
 		<p>Impressions tous formats <span>en boutique et en ligne</span></p>
-		<div class="dots">
+		<div class="dots"> <!-- icones 3 points -->
 		</div>
 	</div>
+	
+
+	<!-- container about-us-->
 	<section id="about-us" class="container">
 		<div>
 			<h2>Qui sommes-nous ?</h2>
@@ -31,10 +43,14 @@
 				<li>De la création de vos fichiers à la livraison de vos imprimés, nous mettons tout notre savoir-faire à votre disposition afin de répondre au mieux à vos attentes.</li>
 			</ul>
 		</div>
+
+		<!-- images aside conteneur -->
 		<aside>
 			<img src="./assets/images/colors.jpg" alt="palette multicolore">
 		</aside>
 	</section>
+
+	<!-- products container -->
 	<section id="products" class="container">
 		<div>
 			<h2>Nos produits</h2>
@@ -45,11 +61,15 @@
 		</aside>
 
 	</section>
+
+	<!-- questions-->
 	<section id="question" class="bg-yellow">
 		<h2>Une question? Un devis?</h2>
 		<p>Appelez-nous au 02 12 34 56 78 ou faites une demande de devis ici :</p>
-		<a href="mailto:contact@print-it.tld" class="btn devis">Devis</a>
+		<a href="mailto:contact@print-it.tld" class="btn devis">Devis</a>  <!-- btn devis -->
 	</section>
+
+	<!-- why-us -->
 	<section id="why-us" class="container">
 		<h2>Pourquoi faire appel à nous?</h2>
 		<div>
@@ -70,6 +90,8 @@
 			</article>
 		</div>
 	</section>
+
+	<!-- contact -->
 	<section id="contact" class="bg-lightblue">
 		<div class="container">
 			<div>
@@ -102,6 +124,8 @@
 		</div>
 	</section>
 </main>
+
+<!-- footer -->
 <footer>
 	<div>
 		<p class="footer-contact">Contact</p>
@@ -116,13 +140,16 @@
 			<img src="./assets/images/metro.png" alt="metro"/> Clémenceau</p>
 	</div>
 	<div>
-		<a href="mailto:contact@print-it.tld" class="btn">Nous écrire</a>
-		<a href="mailto:contact@print-it.tld?subject=Demande&nbsp;de&nbsp;devis" class="btn devis">Devis</a>
+		<a href="mailto:contact@print-it.tld" class="btn">Nous écrire</a>  <!-- btn nous ecrire -->
+		<a href="mailto:contact@print-it.tld?subject=Demande&nbsp;de&nbsp;devis" class="btn devis">Devis</a> <!-- btn devis / pourquoi &nbsp; -->
 	</div>
 	<div>
 		<img class="footer-logo" src="./assets/images/logo.png" alt="Print it ! Impressions d'entreprises" >
 	</div>
 </footer>
-<script src="./assets/script.js"></script>
+<script src="./assets/script.js"></script> <!--  utilisée dans HTML pour importer et exécuter un fichier JavaScript externe. 
+Le fichier script.js se trouve dans le répertoire assets. 
+Lorsque le navigateur rencontre cette balise, il charge et exécute le code JavaScript contenu dans ce fichier. 
+Ajoute des fonctionnalités interactives et dynamiques-->
 </body>
 </html>

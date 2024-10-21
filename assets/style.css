@@ -121,17 +121,35 @@ header {
 	object-fit: cover;
 	object-position: center;
 }
+
+
+
 /* Code CSS en prévision de l'ajout d'un carousel pour la bannière */
 /* Gestion des fleches du carrousel */
 #banner .arrow {
-	position: absolute;
+	position: absolute; /*permet de placer les elements independamment de la div parent "banner" */
+	width: 50px;
+	height: 50px;
+	background-size: contain; /* L'image est redimensionnée pour s'adapter à l'élément */
+	background-repeat: no-repeat; /* L'image ne se répète pas sinon se repete pour s'adapter à la taile de l'element */
+	text-decoration: none;
+	cursor: pointer;
+	z-index: 10;
+	
 }
 #banner .arrow_left {
+	background-image: url('../assets/images/arrow_left.png');
 	left: 10px;
+	
 }
 #banner .arrow_right {
+	background-image: url('../assets/images/arrow_right.png');
 	right: 10px;
+	
 }
+
+
+
 /* Gestion des points du carrousel */
 .dots {
 	position: absolute;
