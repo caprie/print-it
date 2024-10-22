@@ -130,8 +130,8 @@ header {
 	position: absolute; /*permet de placer les elements independamment de la div parent "banner" */
 	width: 50px;
 	height: 50px;
-	background-size: contain; /* L'image est redimensionnée pour s'adapter à l'élément */
-	background-repeat: no-repeat; /* L'image ne se répète pas sinon se repete pour s'adapter à la taile de l'element */
+	background-size: contain; /* image redimensionnée pour s'adapter à l'élément */
+	background-repeat: no-repeat; /*image ne se répète pas sinon se repete pour s'adapter à la taile de l'element */
 	text-decoration: none;
 	cursor: pointer;
 	z-index: 10;
