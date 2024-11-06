@@ -20,19 +20,20 @@ var dotsContainer = document.querySelector('.dots');
 var slides = [  
 // var " slides "" stocke chemin vers img dans dossier assets
 // [ ] cree list ou "tableau" de chq elemts qui representent 1 diapo
-    
     { "image": "./assets/images/slideshow/slide1.jpg", "tagLine": "Impressions tous formats <span>en boutique et en ligne</span>", "alt": "Impression tous formats"},
     { "image": "./assets/images/slideshow/slide2.jpg", "tagLine": "Tirages haute définition grand format <span>pour vos bureaux et events</span>", "alt": "Tirages haute definition"},
     { "image": "./assets/images/slideshow/slide3.jpg", "tagLine": "Grand choix de couleurs <span>de CMJN aux pantones</span>", "alt": "grand choix de couleurs"},
     { "image": "./assets/images/slideshow/slide4.png", "tagLine": "Autocollants <span>avec découpe laser sur mesure</span>", "alt": "Grand choix de couleur"}
 // {} groupe les infos en un objet
 ];
-// ";" indique fin de la cmd
+console.log("Slides chargés:", slides);
 
 
 let currentSlide = 0;  
 // indique la 1ere slide 0 = 1ere
 // "Let" = elemt changeable contrairement à "const" qui est 1 parametre fixe
+console.log("Diapositive actuelle (initialisée):", currentSlide);
+
 
 // "function" pour regrouper le code et pouvoir l'appeler chaque fois qu'on en a besoin
 function createDots() {  
@@ -43,6 +44,7 @@ function createDots() {
 // recommence a zero + recrée autres dots pour empecher qu'ils se rajoutent plusieurs fois 
 // "dotsContainer" = var avec container dans HTML où les "dots" devront apparaitre
 // ".innerHTML = '' " = vider tt l'interieur du container + remplace contenu par '' (rien du tout) qd on relance la fonct°
+console.log("Conteneur de dots vidé.");
 
 
     for (var i = 0; i < slides.length; i++) {
@@ -56,6 +58,7 @@ function createDots() {
 // "document.createElement('span')" crée 1 dot mit de côté (dans dot) pour l'ajouter ensuite au carrousel 
         dot.classList.add('dot');
 // dit a "dot" d'ajouter 1 class "dot" pour style spécifique dans le CSS + controle apparence (changemt couleur dot dans css)        
+console.log("Dot créé pour la diapositive", i);       
         dot.onclick = function(index) {
 // "dot.onclick" = ajoute 1 act° au clic sur pt
 // "function(index)" = cree 1 fonct° pour gérer le clic. 
@@ -65,6 +68,7 @@ function createDots() {
 // " function() " sans parametres specifiques -- nv fonct° pour etre executee + tard   
                 currentSlide = index;
 // "currentSlide" diapo actuellemt affichée + " = index; " affiche la bonne diapo qd clic dessus                
+console.log("Dot cliqué - Diapositive actuelle mise à jour:", currentSlide);               
                 updateCarousel();
 // "updateCarousel();" = fonct° met à jour ce qui est affiché dans le carrousel + montre la nvelle diapo                
             };
@@ -75,8 +79,10 @@ function createDots() {
         dotsContainer.appendChild(dot); 
 // "dotsContainer" = var qui cree le container pour mettre les dots en bas du carrousel
 // "appenChild" place dot comme 1 elemt "enfant" dans dotsContainer
+console.log("Dot ajouté au conteneur.");
     }
 }
+
 
 // Met à jour l'img, txt + etat des dots pour afficher diapo sélectionnee
 function updateCarousel() {  
@@ -89,6 +95,7 @@ function updateCarousel() {
 // "bannerTagline" = endroit ou la tagline s’affiche dans l'img du carrousel  
 // ".innerHTML" = partie remplace contenu dans bannerTagline par le nv txt pour ecrire txt et balises HTML (ex: <span>)
 // "slides[currentSlide].tagLine" = prend la tagline de la diapo actuelle (currentSlide)"
+console.log("Carrousel mis à jour - Image:", slides[currentSlide].image, "Tagline:", slides[currentSlide].tagLine);
     updateDots();
 // "updateDots();" actualise les dots pour montrer celui de l'img affichee 
 }
@@ -113,6 +120,7 @@ function updateDots() {
 // " 'dot_selected' " = nom de la class qu'on veut ajouter ou enlever = class fait briller le pt
 // " i === currentSlide " = verifie si n° du pt actuel "(i)" est = au n° de diapo actuelle (currentSlide)
 // si i = "currentSlide " class "dot_selected" ajoutee pour mettre en evidence le dot sinon class retiree
+console.log("Dot", i, "mis à jour - Actif:", i === currentSlide);
     }
 }
 
@@ -128,6 +136,7 @@ arrowLeft.onclick = function() {
 // " (currentSlide === 0) " = verifie si on est sur 1ere diapo (index 0)
 // " ? slides.length - 1 " = si "true" (sinon) passe a dernière diapo (slides.length - 1)
 // "currentSlide - 1" = passe a diapo d'avant en diminuant " currentSlide de 1 "
+console.log("Flèche gauche cliquée - Diapositive actuelle:", currentSlide);
     updateCarousel();
 // met à jour le carrousel pour afficher la derniere diapo
 // " updateCarousel() " = nom de la fonct° deja definie + appelee ici pour actualiser l’img, txt, dots 
@@ -138,6 +147,7 @@ arrowLeft.onclick = function() {
 // idem que pour "arrowRight"
 arrowRight.onclick = function() {
     currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
+    console.log("Flèche droite cliquée - Diapositive actuelle:", currentSlide);
     updateCarousel();
 };
 
@@ -147,6 +157,6 @@ createDots();
 // cree ts les dots de navigat°
 updateCarousel();
 // affiche la 1ere img + 1er txt + met en evidence le bon dot
-
+console.log("Initialisation terminée : dots créés et première diapositive affichée.");
 
 // ajout nouvelle couleur de dot dans css: #ff008e ligne 168 car j'ai trouvé qu'il n'était pas assez visible
